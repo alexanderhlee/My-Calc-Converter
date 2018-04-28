@@ -5,63 +5,48 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item text-right>
-    {{numberOutput.text}}
-  </ion-item>
-
-
+  <ion-list>
+    <ion-label>Decimal</ion-label>
+    <ion-item text-right>{{screenOutput}}</ion-item>
+    <ion-label>Hexidecimal</ion-label>
+    <ion-item text-right>{{screenOutputHex}}</ion-item>
+    <ion-label>Dozenal</ion-label>
+    <ion-item text-right>{{screenOutputDoz}}</ion-item>
+  </ion-list>
 
   <ion-grid no-padding>
     <ion-row>
-      <ion-col>
-        <button ion-button block outline (click)="appenNum('1')">1</button>
+      <ion-col *ngFor="let numberItem of numberArray1">
+        <number-button [numNumber]="numberItem" (selected)="onNumberSelected($event)"></number-button>
       </ion-col>
-      <ion-col>
-        <button ion-button block outline (click)="appenNum('2')">2</button>
-      </ion-col>
-      <ion-col>
-        <button ion-button block outline (click)="appenNum('3')">3</button>
-      </ion-col>
-    </ion-row>
-    <ion-row> 
-      <ion-col>
-        <button ion-button block outline (click)="appenNum('4')">4</button>
-      </ion-col>
-      <ion-col>
-        <button ion-button block outline (click)="appenNum('5')">5</button>
-      </ion-col>
-      <ion-col>
-        <button ion-button block outline (click)="appenNum('6')">6</button>
+    </ion-row> 
+    <ion-row>
+      <ion-col *ngFor="let numberItem of numberArray2">
+        <number-button [numNumber]="numberItem" (selected)="onNumberSelected($event)"></number-button>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <button ion-button block outline (click)="appenNum('7')">7</button>
-      </ion-col>
-      <ion-col>
-        <button ion-button block outline (click)="appenNum('8')">8</button>
-      </ion-col>
-      <ion-col>
-        <button ion-button block outline (click)="appenNum('9')">9</button>
+      <ion-col *ngFor="let numberItem of numberArray3">
+        <number-button [numNumber]="numberItem" (selected)="onNumberSelected($event)"></number-button>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
+     <!--  <ion-col>
         <button ion-button block outline (click)="setCurrentOpToAdd()">+</button>
       </ion-col>
       <ion-col>
-        <button ion-button block outline  (click)="setCurrentOpToSub()">-</button>
+        <button ion-button block outline (click)="setCurrentOpToSub()">-</button>
       </ion-col>
       <ion-col>
         <button ion-button block outline (click)="displayTotal()">=</button>
-      </ion-col>
+      </ion-col> -->
       <ion-col>
-        <button ion-button block outline (click)="appenNum('0')">0</button>
+        <number-button [numNumber]="0" (selected)="onNumberSelected($event)"></number-button>
       </ion-col>
       <ion-col>
         <button ion-button block outline (click)="clearText()">AC</button>
       </ion-col>
     </ion-row>
   </ion-grid>
-    
+
 </ion-content>
