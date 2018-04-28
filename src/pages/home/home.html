@@ -47,7 +47,13 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <button ion-button block outline>?</button>
+        <button ion-button block outline (click)="setCurrentOpToAdd()">+</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block outline  (click)="setCurrentOpToSub()">-</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block outline (click)="displayTotal()">=</button>
       </ion-col>
       <ion-col>
         <button ion-button block outline (click)="appenNum('0')">0</button>
