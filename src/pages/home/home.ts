@@ -21,7 +21,7 @@ export class HomePage {
   private numberArray2 = [4,5,6];
   private numberArray3 = [7,8,9];
 
-  onViewDidLoad(){
+  onViewDidEnter(){
     this.clearText();
   }
 
