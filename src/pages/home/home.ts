@@ -11,4 +11,25 @@ export class HomePage {
 
   }
 
+  numberOutput = {
+    text: "0"
+  }
+
+  appenNum(num: string){
+    if (this.numberOutput.text=="0")
+    {
+      this.numberOutput.text = num;
+    }
+    else
+    {
+      let temp = this.numberOutput.text.concat(num);
+      this.numberOutput.text = temp;
+    }
+    
+  }
+
+  clearText(){
+    this.numberOutput.text = "0";
+  }
+
 }

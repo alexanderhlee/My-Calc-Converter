@@ -1,6 +1,6 @@
 {
   "name": "MyCalc",
-  "app_id": "",
+  "app_id": "65583a7f",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
