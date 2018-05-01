@@ -5,10 +5,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     templateUrl: '../numberbutton/numberbutton.html'
   })
   export class NumberButtonComponent {
-    @Input() numNumber;
+    @Input() number;
     @Output() selected = new EventEmitter();
 
     clickMe(){
-      this.selected.emit(this.numNumber);
-    }
+      this.selected.emit();
+    } 
   }

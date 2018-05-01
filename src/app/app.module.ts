@@ -10,7 +10,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { NumberButtonComponent } from '../components/numberbutton/numberbutton'
+import { NumberButtonComponent } from '../components/numberbutton/numberbutton';
+import { ScreenOutputComponent } from '../components/screen-output/screen-output';
+import { ConverterProvider } from '../providers/converter/converter';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { NumberButtonComponent } from '../components/numberbutton/numberbutton'
     ContactPage,
     HomePage,
     TabsPage,
-    NumberButtonComponent
+    NumberButtonComponent,
+    ScreenOutputComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { NumberButtonComponent } from '../components/numberbutton/numberbutton'
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ConverterProvider
   ]
 })
 export class AppModule {}

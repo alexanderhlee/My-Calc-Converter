@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { NumberButtonComponent} from '../../components/numberbutton/numberbutton'
+import { ScreenOutputComponent } from '../../components/screen-output/screen-output'
+import { ConverterProvider } from '../../providers/converter/converter';
 
 @Component({
   selector: 'page-home',
@@ -8,7 +9,7 @@ import { NumberButtonComponent} from '../../components/numberbutton/numberbutton
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+   constructor(private converterProvider: ConverterProvider, public navCtrl: NavController) {
 
   }
 
@@ -52,30 +53,17 @@ export class HomePage {
     
   }*/
 
-  onNumberSelected(theNum) {
-    let temp = "0";
-    if (this.screenOutput == "0") {
-      temp = String(theNum);
-    }
-    else {
-      temp = this.screenOutput.concat(String(theNum));
-    }
-    this.screenOutput = temp;
-    this.screenOutputHex = Number(temp).toString(16).toUpperCase();
-    this.screenOutputDoz = this.formatDozenal(Number(temp).toString(12)).toUpperCase();
-    //console.log(theNum);
-  }
+   onNumberSelected(theNum) {
+    this.converterProvider.onNumberSelected(theNum);
+  } 
 
    clearText(){
-    this.runningTotal = 0;
-    this.screenOutput = String(this.runningTotal);
-    this.screenOutputHex = String(this.runningTotal);
-    this.screenOutputDoz = String(this.runningTotal);
+    this.converterProvider.clearText();
   }
 
-  formatDozenal(input: String){
+ /*  formatDozenal(input: String){
     return input.replace("a", "x").replace("b","e");
-  }
+  } */
 
   /*
   setCurrentOpToAdd(){

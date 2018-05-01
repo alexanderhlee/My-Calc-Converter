@@ -1,32 +1,39 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>DECIMAL</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-label>Decimal</ion-label>
-    <ion-item text-right>{{screenOutput}}</ion-item>
-    <ion-label>Hexadecimal</ion-label>
-    <ion-item text-right>{{screenOutputHex}}</ion-item>
-    <ion-label>Dozenal</ion-label>
-    <ion-item text-right>{{screenOutputDoz}}</ion-item>
-  </ion-list>
+<!--   <ion-list>
+    <ion-item>
+      <div item-left>Decimal</div>
+      <div item-right>{{screenOutput}}</div>
+    </ion-item>
+    <ion-item>
+      <div item-left>Hexadecimal</div>
+      <div item-right>{{screenOutputHex}}</div>
+    </ion-item>
+    <ion-item>
+      <div item-left>Dozenal</div>
+      <div item-right>{{screenOutputDoz}}</div>
+    </ion-item>
+  </ion-list> -->
+  <screen-output #screenoutput></screen-output>
 
   <ion-grid no-padding>
     <ion-row>
-      <ion-col *ngFor="let numberItem of numberArray1">
-        <number-button [numNumber]="numberItem" (selected)="onNumberSelected($event)"></number-button>
+      <ion-col *ngFor="let numberItem of numberArray3">
+        <number-button [number]="numberItem" (selected)="screenoutput.function1()"></number-button>
       </ion-col>
     </ion-row> 
-    <ion-row>
-      <ion-col *ngFor="let numberItem of numberArray2">
+<!--    <ion-row>
+       <ion-col *ngFor="let numberItem of numberArray2">
         <number-button [numNumber]="numberItem" (selected)="onNumberSelected($event)"></number-button>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col *ngFor="let numberItem of numberArray3">
+      <ion-col *ngFor="let numberItem of numberArray1">
         <number-button [numNumber]="numberItem" (selected)="onNumberSelected($event)"></number-button>
       </ion-col>
     </ion-row>
@@ -37,7 +44,7 @@
       <ion-col>
         <button ion-button block outline (click)="clearText()">AC</button>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </ion-grid>
 
 </ion-content>
