@@ -14,11 +14,15 @@ export class ScreenOutputComponent {
     private screenOutputHex;
     private screenOutputDoz
 
-    function1(){
-        alert("hi");
-        let output = this.converterProvider.getScreenOutput();
+    refreshDisplay(){
+       let output = this.converterProvider.getScreenOutput();
         this.screenOutputDec = output.dec;
         this.screenOutputHex = output.hex;
         this.screenOutputDoz = output.doz;
+    }
+
+    resetDisplayToZero(){
+        this.converterProvider.resetToZero();
+        this.refreshDisplay();
     }
 }

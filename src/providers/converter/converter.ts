@@ -1,20 +1,16 @@
 import { Injectable } from '@angular/core';
-import  { Observable } from 'rxjs/Observable'
 
 @Injectable()
 export class ConverterProvider {
 
   constructor() {
-    //console.log('Hello ConverterProvider Provider');
   }
 
   private screenOutput = {
-    dec: "",
-    hex: "",
-    doz: ""
+    dec: "0",
+    hex: "0",
+    doz: "0"
   };
-
-  //$screenOutput: Observable<Array<string>>;
 
   onNumberSelected(theNum) {
     let temp = "0";
@@ -33,13 +29,13 @@ export class ConverterProvider {
     return input.replace("a", "x").replace("b", "e");
   }
 
-  clearText() {
+  resetToZero() {
     this.screenOutput.dec = "0";
     this.screenOutput.hex = "0";
     this.screenOutput.doz = "0";
   }
 
- public getScreenOutput(){
+  getScreenOutput() {
   return this.screenOutput;
  }
 }
