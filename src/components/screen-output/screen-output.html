@@ -1,14 +1,28 @@
-<ion-list>
-    <ion-item>
-        <div item-left>Decimal</div>
-        <div item-right>{{screenOutputDec}}</div>
-    </ion-item>
-    <ion-item>
-        <div item-left>Hexadecimal</div>
-        <div item-right>{{screenOutputHex}}</div>
-    </ion-item>
-    <ion-item>
-        <div item-left>Dozenal</div>
-        <div item-right>{{screenOutputDoz}}</div>
-    </ion-item>
-</ion-list>
+<ion-grid no-padding>
+    <ion-row>
+        <ion-col>
+            <div style="font-family:monospace; font-size: 1.5em;" item-left>Decimal</div>
+        </ion-col>
+        <ion-col align-self-stretch>
+            <div style="font-family:monospace; font-size: 1.2em; text-align: right;">{{screenOutputDec}}</div>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col>
+            <div style="font-family:monospace; font-size: 1.5em;" item-left>Hexadecimal</div>
+        </ion-col>
+        <ion-col align-self-stretch>
+            <div style="font-family:monospace; font-size: 1.2em; text-align: right;">{{screenOutputHex}}</div>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col>
+            <div style="font-family:monospace; font-size: 1.5em;" item-left>Dozenal</div>
+        </ion-col>
+        <ion-col align-self-stretch>
+            <div style="font-family:monospace; font-size: 1.2em; text-align: right;">{{screenOutputDoz}}</div>
+        </ion-col>
+    </ion-row>
+</ion-grid>

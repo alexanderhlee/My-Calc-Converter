@@ -25,8 +25,10 @@ export class ConverterProvider {
     this.screenOutput.doz = this.formatDozenal(Number(temp).toString(12)).toUpperCase();
   }
 
+  // Use regex to replace all instances of "a" with "x" and "b" with "e".
+  // Dozenal convention is that 10 is "x" and 11 is e.
   formatDozenal(input: String) {
-    return input.replace("a", "x").replace("b", "e");
+    return input.replace(/a/g, "x").replace(/b/g, "e");
   }
 
   resetToZero() {
