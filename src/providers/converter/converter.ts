@@ -26,7 +26,7 @@ export class ConverterProvider {
   }
 
   // Use regex to replace all instances of "a" with "x" and "b" with "e".
-  // Dozenal convention is that 10 is "x" and 11 is e.
+  // Dozenal convention is that 10 is "x" and 11 is "e".
   formatDozenal(input: String) {
     return input.replace(/a/g, "x").replace(/b/g, "e");
   }

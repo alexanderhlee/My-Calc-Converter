@@ -2,10 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-hexadecimal',
+  templateUrl: 'hexadecimal.html'
 })
-export class AboutPage {
+export class HexadecimalPage {
 
   constructor(public navCtrl: NavController) {
     this.loadButtons();

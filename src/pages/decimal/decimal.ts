@@ -1,17 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
-//import { ScreenOutputComponent } from '../../components/screen-output/screen-output'
-
-
-
 
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-decimal',
+  templateUrl: 'decimal.html'
 })
 
-export class HomePage {
+export class DecimalPage {
 
    constructor(public navCtrl: NavController) {
   }
