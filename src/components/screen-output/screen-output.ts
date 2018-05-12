@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { ConverterProvider } from '../../providers/converter/converter';
 
 @Component({
@@ -9,7 +9,7 @@ import { ConverterProvider } from '../../providers/converter/converter';
 export class ScreenOutputComponent {
     constructor(private converterProvider: ConverterProvider){
     }
-
+    
     private screenOutputDec;
     private screenOutputHex;
     private screenOutputDoz

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -11,6 +11,8 @@ export class AboutPage {
     this.loadButtons();
   }
 
+  @ViewChild('screenoutput') screenOutput;
+
   highestRow: string[];
   topRow: number[];
   middleRow: number[];
@@ -22,11 +24,11 @@ export class AboutPage {
     this.middleRow = [4, 5, 6];
     this.bottomRow = [1, 2, 3];
   }
- 
 
-
-
-  
-
-
+  ionViewDidEnter(){
+    if (this.screenOutput)
+    {
+      this.screenOutput.refreshDisplay();
+    }
+  }
 }
