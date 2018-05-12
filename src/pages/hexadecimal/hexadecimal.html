@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar>
-      <ion-title>HEXADECIMAL</ion-title>
+      <ion-title>Hexadecimal</ion-title>
     </ion-navbar>
   </ion-header>
   
@@ -32,7 +32,7 @@
           <number-button [displayNum]="0" (selected)="screenoutput.refreshDisplay()"></number-button>
         </ion-col>
         <ion-col>
-          <button ion-button color="dark" block outline (click)="screenoutput.resetDisplayToZero()">AC</button>
+          <button ion-button block color="orange" (click)="screenoutput.resetDisplayToZero()">AC</button>
         </ion-col>
       </ion-row>
     </ion-grid>
