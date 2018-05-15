@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Dozenal</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding> 
+  <screen-output #screenoutput></screen-output>
+  <ion-grid no-padding>
+      <ion-row>
+          <ion-col *ngFor="let numberItem of highestRow">
+            <number-button [displayNum]="numberItem" (selected)="screenoutput.refreshDisplay()"></number-button>
+          </ion-col>
+        </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let numberItem of topRow">
+        <number-button [displayNum]="numberItem" (selected)="screenoutput.refreshDisplay()"></number-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let numberItem of middleRow">
+        <number-button [displayNum]="numberItem" (selected)="screenoutput.refreshDisplay()"></number-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let numberItem of bottomRow">
+        <number-button [displayNum]="numberItem" (selected)="screenoutput.refreshDisplay()"></number-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <number-button [displayNum]="0" (selected)="screenoutput.refreshDisplay()"></number-button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block color="orange" (click)="screenoutput.resetDisplayToZero()">AC</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

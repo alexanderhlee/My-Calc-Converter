@@ -4,7 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { HexadecimalPage } from '../pages/hexadecimal/hexadecimal';
-import { ContactPage } from '../pages/contact/contact';
+import { DozenalPage } from '../pages/dozenal/dozenal';
 import { DecimalPage } from '../pages/decimal/decimal';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -18,7 +18,7 @@ import { ConverterProvider } from '../providers/converter/converter';
   declarations: [
     MyApp,
     HexadecimalPage,
-    ContactPage,
+    DozenalPage,
     DecimalPage,
     TabsPage,
     NumberButtonComponent,
@@ -32,7 +32,7 @@ import { ConverterProvider } from '../providers/converter/converter';
   entryComponents: [
     MyApp,
     HexadecimalPage,
-    ContactPage,
+    DozenalPage,
     DecimalPage,
     TabsPage
   ],
