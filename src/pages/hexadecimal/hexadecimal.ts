@@ -6,6 +6,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'hexadecimal.html'
 })
 export class HexadecimalPage {
+  baseType = "Hexadecimal";
 
   constructor(public navCtrl: NavController) {
     this.loadButtons();

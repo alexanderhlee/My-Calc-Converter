@@ -6,6 +6,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'dozenal.html'
 })
 export class DozenalPage {
+  baseType = "Dozenal";
 
   constructor(public navCtrl: NavController) {
     this.loadButtons();

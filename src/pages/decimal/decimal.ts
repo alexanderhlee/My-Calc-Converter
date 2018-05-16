@@ -7,6 +7,7 @@ import { NavController } from 'ionic-angular';
 })
 
 export class DecimalPage {
+  baseType = "Decimal";
 
    constructor(public navCtrl: NavController) {
   }

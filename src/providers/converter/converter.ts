@@ -13,16 +13,24 @@ export class ConverterProvider {
   };
 
   onNumberSelected(theNum) {
-    let temp = "0";
+    let temp: any = "0";
     if (this.screenOutput.dec == "0") {
       temp = String(theNum);
     }
     else {
       temp = this.screenOutput.dec.concat(String(theNum));
     }
-    this.screenOutput.dec = temp;
-    this.screenOutput.hex = Number(temp).toString(16).toUpperCase();
-    this.screenOutput.doz = this.formatDozenal(Number(temp).toString(12)).toUpperCase();
+    if (!isNaN(temp)){
+      this.screenOutput.dec = temp;
+      this.screenOutput.hex = Number(temp).toString(16).toUpperCase();
+      this.screenOutput.doz = this.formatDozenal(Number(temp).toString(12)).toUpperCase();
+    }
+    else{
+      this.screenOutput.dec = temp.toString(10);
+      this.screenOutput.hex = temp.toString(16).toUpperCase();
+      this.screenOutput.doz = this.formatDozenal(temp.toString(12)).toUpperCase();
+    }
+   
   }
 
   // Use regex to replace all instances of "a" with "x" and "b" with "e".
