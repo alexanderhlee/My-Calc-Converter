@@ -13,12 +13,13 @@ export class ConverterProvider {
   };
 
   onNumberSelected(theNum) {
+    let myNum = theNum.num;
     let temp: any = "0";
     if (this.screenOutput.dec == "0") {
-      temp = String(theNum);
+      temp = String(myNum);
     }
     else {
-      temp = this.screenOutput.dec.concat(String(theNum));
+      temp = this.screenOutput.dec.concat(String(myNum));
     }
     if (!isNaN(temp)){
       this.screenOutput.dec = temp;

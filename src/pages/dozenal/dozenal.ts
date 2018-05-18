@@ -26,9 +26,8 @@ export class DozenalPage {
     this.bottomRow = [1, 2, 3];
   }
 
-  ionViewDidEnter(){
-    if (this.screenOutput)
-    {
+  ionViewDidEnter() {
+    if (this.screenOutput) {
       this.screenOutput.refreshDisplay();
     }
   }

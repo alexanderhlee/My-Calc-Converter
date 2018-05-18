@@ -9,19 +9,26 @@ import { NavController } from 'ionic-angular';
 export class DecimalPage {
   baseType = "Decimal";
 
-   constructor(public navCtrl: NavController) {
+  generateNumberObject(number: Number) {
+    let retNumberItem = {
+      num: number,
+      base: "dec"
+    }
+    return retNumberItem;
+  }
+
+  bottomRow = [this.generateNumberObject(1), this.generateNumberObject(2), this.generateNumberObject(3)];
+  middleRow = [this.generateNumberObject(4), this.generateNumberObject(5), this.generateNumberObject(6)];
+  topRow = [this.generateNumberObject(7), this.generateNumberObject(8), this.generateNumberObject(9)];
+  zeroButton = this.generateNumberObject(0);
+
+  constructor(public navCtrl: NavController) {
   }
 
   @ViewChild('screenoutput') screenOutput;
 
-  private runningTotal = 0;
-  private bottomRow = [1,2,3];
-  private middleRow = [4,5,6];
-  private topRow = [7,8,9];
-
-  ionViewDidEnter(){
-    if (this.screenOutput)
-    {
+  ionViewDidEnter() {
+    if (this.screenOutput) {
       this.screenOutput.refreshDisplay();
     }
   }
