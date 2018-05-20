@@ -29,7 +29,7 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <number-button [displayNum]="0" (selected)="screenoutput.refreshDisplay()"></number-button>
+        <number-button [displayNum]="zeroButton" (selected)="screenoutput.refreshDisplay()"></number-button>
       </ion-col>
       <ion-col>
         <button ion-button block color="orange" (click)="screenoutput.resetDisplayToZero()">AC</button>

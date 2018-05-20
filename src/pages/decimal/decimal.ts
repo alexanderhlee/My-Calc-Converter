@@ -9,7 +9,7 @@ import { NavController } from 'ionic-angular';
 export class DecimalPage {
   baseType = "Decimal";
 
-  generateNumberObject(number: Number) {
+  generateNumberObject(number: any) {
     let retNumberItem = {
       num: number,
       base: "dec"
