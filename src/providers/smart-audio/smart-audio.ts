@@ -43,7 +43,7 @@ export class SmartAudioProvider {
       this.sounds.push(audio);
 
     } else {
-      this.nativeAudio.preloadSimple(key, asset);
+      this.nativeAudio.preloadComplex(key, asset,1,1,0);
       let audio = {
         key: key,
         asset: asset,
