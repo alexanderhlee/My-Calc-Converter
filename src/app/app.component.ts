@@ -3,8 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
-
-declare var nativeclick;
+import { SmartAudioProvider } from '../providers/smart-audio/smart-audio';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,17 +11,13 @@ declare var nativeclick;
 export class MyApp {
   rootPage:any = TabsPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, smartAudio: SmartAudioProvider) {
     platform.ready().then((val) => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-
-      if (val === 'cordova'){
-        var clickyClasses = ['button', 'a']; // add other classes that should make a sound when clicked on
-        nativeclick.watch(clickyClasses);
-      }
+      smartAudio.preload('buttonClick', 'assets/audio/clickSound.mp3');
     });
   }
 }

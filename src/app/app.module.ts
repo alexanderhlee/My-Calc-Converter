@@ -14,6 +14,9 @@ import { NumberButtonComponent } from '../components/numberbutton/numberbutton';
 import { ScreenOutputComponent } from '../components/screen-output/screen-output';
 import { ConverterProvider } from '../providers/converter/converter';
 
+import { SmartAudioProvider } from '../providers/smart-audio/smart-audio';
+import { NativeAudio } from '@ionic-native/native-audio';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -40,7 +43,9 @@ import { ConverterProvider } from '../providers/converter/converter';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ConverterProvider
+    ConverterProvider,
+    SmartAudioProvider,
+    NativeAudio
   ]
 })
 export class AppModule {}
