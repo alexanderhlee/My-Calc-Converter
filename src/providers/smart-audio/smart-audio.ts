@@ -43,7 +43,7 @@ export class SmartAudioProvider {
       this.sounds.push(audio);
 
     } else {
-      this.nativeAudio.preloadComplex(key, asset,1,1,0);
+      this.nativeAudio.preloadSimple(key, asset);
       let audio = {
         key: key,
         asset: asset,
@@ -63,11 +63,11 @@ export class SmartAudioProvider {
       audioAsset.play();
 
     } else {
-      this.nativeAudio.play(audio.asset).then((res) => {
+      /* this.nativeAudio.play(audio.asset).then((res) => {
         console.log(res);
       }, (err) => {
         console.log(err);
-      });
+      }); */
     }
   }
 }
