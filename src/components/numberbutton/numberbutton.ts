@@ -3,7 +3,14 @@ import { ConverterProvider } from '../../providers/converter/converter';
 
 @Component({
   selector: 'number-button',
-  templateUrl: '../numberbutton/numberbutton.html'
+  templateUrl: '../numberbutton/numberbutton.html',
+  styles: [`
+    table {
+      width: -webkit-fill-available;
+      border-spacing: 1px; 
+      border-collapse: inherit;
+    }
+  `]
 })
 
 export class NumberButtonComponent {
