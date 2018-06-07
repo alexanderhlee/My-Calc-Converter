@@ -8,6 +8,7 @@ import { NavController } from 'ionic-angular';
 
 export class DecimalPage {
   baseType = "Decimal";
+  numStack = [];
 
   generateNumberObject(number: any) {
     let retNumberItem = {
@@ -30,6 +31,22 @@ export class DecimalPage {
   ionViewDidEnter() {
     if (this.screenOutput) {
       this.screenOutput.refreshDisplay();
+    }
+  }
+
+  doPlus(){
+    //console.log("plus was pushed!");
+    this.numStack.push(this.screenOutput.screenOutputDec);
+    this.screenOutput.resetDisplayToZero();
+    //console.log(this.screenOutput.screenOutputDec);
+  }
+
+  doEq(){
+    //console.log("equals was pushed!");
+    this.numStack.push(this.screenOutput.screenOutputDec);
+    if (this.numStack[0] && this.numStack[1]){
+      console.log(Number(this.numStack[0]) + Number(this.numStack[1]));
+      this.numStack = [];
     }
   }
 }
